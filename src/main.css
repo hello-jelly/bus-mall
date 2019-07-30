@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: whitesmoke;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+#nav {
+    background-color: black;
+    width: 100vw;
+    height: 30px;
+}
+
+header {
+    display: flex;
+    float: left;
+    background-color: #4c4c4c;
+    width: 100vw;
+    height: 180px;
+}
+
+#logo {
+    height: 100px;
+    margin-top: 20px;
+}
+
+main {
+    background-image: url(../assets/bus-img.jpg);
+    background-position: center 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    text-align: center;
+    width: 100vw;
+}
+
+h2 {
+    font-family: 'Cabin', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: black;
+}
+
+.img-buttons {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.item {
+    width: 300px;
+    height: 300px;
+}
+
+.item:hover {
+    cursor: pointer;
+    transition: color 100ms ease-in;
+    border: 3px solid red;
+}
+
+
+.btn-img {
+    height: 250px;
+    object-fit: contain;
+    height: 100%;
+    background-color: white;
+    width: 100%;
+}
+
+.next-button {
+    font-size: 1.5rem;
+    padding: 10px;
+    width: 100px;
+    background-color: red;
+    color: white;
+    border: transparent;
+    font-weight: bolder;
+}
+
+.next-button:hover {
+    cursor: pointer;
+    transition: color 100ms ease-in;
+    border: 2px solid white;
+}
+
+footer {
+    background-color:black;
+    height:20px;
+    margin-top: 30px;
+}
