@@ -1,1 +1,2 @@
-// import store from './store.js';
+import store from './store.js';
+

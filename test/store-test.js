@@ -1,25 +1,26 @@
-import store from './data/store.js';
-import items from './data/items.js';
+import store from '../src/data/store.js';
+import items from '../src/data/items.js';
 
 const test = QUnit.test;
 
-QUnit.module('Items Store');
+QUnit.module('Store Test');
 
-store.storage = window.sessionsStorage;
+store.storage = window.sessionStorage;
 
-QUnit.testStart(() => {
-    store.storage.clear();
-});
-
-test('get item and save', (assert) => {
+test('Get & Save Methods', assert => {
+    // arrange
     const key = 'boots';
-    const boots = { name: 'Boots' };
-    store.save(key, boots);
-    const got = store.get(key);
-    assert.deepEqual(got, boots);
+    const value = { name: 'Boots' };
+    //act
+    store.save(key, value);
+    const keep = store.get(key);
+    // assert
+    assert.deepEqual(keep, value);
 });
 
-test('get items and use bootstrapped items', (assert) => {
-    const products = store.getItems();
-    assert.deepEqual(products, items);
+test('get products through bootstrapping', assert => {
+    // act
+    const gotItems = store.getItems();
+    // assert
+    assert.deepEqual(gotItems, items);
 });

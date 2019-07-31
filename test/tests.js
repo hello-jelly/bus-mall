@@ -1,2 +1,1 @@
-import './store.test.js';
-import './item-set.test.js';
+import './store-test.js';

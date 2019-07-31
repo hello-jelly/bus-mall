@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/src/main.css">
-    <link rel="stylesheet" href="/src/quiz.css">
-    <link href="https://fonts.googleapis.com/css?family=Cabin|Hind+Siliguri|Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Hind+|Rubik&display=swap" rel="stylesheet">
     <title>BusMall</title>
 </head>
 <body>
@@ -18,24 +17,25 @@
     </header>
 
     <main>
+        <h1>Select An Item</h1>
         <section id="product-selection">
             <h2 id="product-name"></h2>
             <div id="product-container" class="img-buttons">
-                <label class="item-right">
-                    <input class="box" type="radio" name="item" value="">
+                <label class="item correct">
+                    <input type="radio" name="item" value="">
                     <img src="">
                 </label>
-                <label class="item-wrong">
-                    <input class="box" type="radio" name="item" value="">
+                <label class="item wrong">
+                    <input type="radio" name="item" value="">
                     <img src="">
                 </label>
-                <label class="item-wrong">
-                    <input class="box" type="radio" name="item" value="">
+                <label class="item wrong">
+                    <input type="radio" name="item" value="">
                     <img src="">
                 </label>
             </div>
            
-            <p id="next-container" class="hidden">
+            <p id="next-container">
                     <button id="next-button">NEXT</button>
             </p>
         </section>
@@ -46,7 +46,7 @@
                 <span name="item"></span> was clicked <span id="view-count"></span> times.<br>
                 That is 
             </p>                
-            </chart>
+            <ul id="choices-list"></ul>
         </section>
     </main>
     <footer>

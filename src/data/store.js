@@ -1,7 +1,5 @@
 import items from './items.js';
 
-const PRODUCT_KEY = 'products';
-
 const store = {
     storage: window.localStorage,
     save(key, item) {
@@ -13,14 +11,14 @@ const store = {
         const item = JSON.parse(json);
         return item;
     },
-    getProducts() {
-        let products = store.get(PRODUCT_KEY);
+    getItems() {
+        let products = store.get('items');
         if(!products) {
-            store.save(PRODUCT_KEY, items);
+            store.save('items', items);
             products = items;
         }
         return products;
-    }
+    },
 };
 
 export default store;
