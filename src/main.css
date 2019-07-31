@@ -18,6 +18,10 @@ body {
     height: 30px;
 }
 
+.hidden {
+    display: none;
+}
+
 header {
     display: flex;
     float: left;
@@ -32,13 +36,24 @@ header {
 }
 
 main {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0;
+    height: 1000px;
+    padding: 20px;
+    background: white;
+    text-align: center;
     background-image: url(../assets/bus-img.jpg);
     background-position: center 80px;
     background-repeat: no-repeat;
     background-size: cover;
     height: 700px;
-    text-align: center;
-    width: 100vw;
+}
+
+#product-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 h2 {
@@ -46,35 +61,65 @@ h2 {
     font-size: 2rem;
     color: white;
     text-shadow: black;
+    margin-top: 20px;
 }
 
-.img-buttons {
-    width: 100vw;
+#product-container {
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    padding: 30px;
+    justify-content: space-between;
 }
 
 .item {
-    width: 300px;
-    height: 300px;
+    width: calc(50% - 5px);
+    height: 260px;
+    position: relative;
+    border: 5px solid #ddd;
+    transition: width 200ms ease-in-out;
 }
 
-.item:hover {
+.item input {
+    display: none;
+}
+
+#product-container.reveal .item::before {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bolder;
+    height: 25px;
+    width: 25px;
+    background: white;
+    padding: 3px;
+    border-radius: 100%;
+}
+
+#product-container:not(.reveal) .item:hover {
+    border: 5px solid red;
     cursor: pointer;
-    transition: color 100ms ease-in;
-    border: 3px solid red;
 }
 
-.btn-img {
+#product-container.reveal .item.choice {
+    border: 5px solid red;
+}
+
+#product-container.reveal .item.correct {
+    background: white;
+    height: auto;
+    width: calc(80% - 5px);
+}
+
+.item img {
     height: 250px;
-    object-fit: contain;
-    height: 100%;
-    background-color: white;
     width: 100%;
+    object-fit: cover;
 }
 
-.next-button {
+#next-button {
     font-size: 1.5rem;
     padding: 10px;
     width: 100px;
