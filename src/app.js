@@ -40,30 +40,34 @@ function renderItems() {
             resultsButton.Button.classList.add('hidden');
             return;
         });
-    } else if(masterItemSet.list.length < 3) {
+    }
+    
+    if(masterItemSet.list.length < 3) {
         masterItemSet = new ItemSet(items);
         for(let i = 0; i < itemsToDisplay.length; i++) {
             masterItemSet.removeByCode(itemsToDisplay[i].code);
         }
     }
+
+    let itemSet = masterItemSet;
+
+    itemsToDisplay = [];
+        // generates 3 random imgs to display, stores and removes from item set
+    for(let i = 0; i < 3; i++) {
+        let renderItem = itemSet.getRandomItem();
+        itemsToDisplay.push(renderItem);
+        tally(displayedItems, renderItem.code);
+        itemSet.removeByCode(renderItem.code);
+
+            // displaying image and removing hidden class
+        let img = imgButtons[i].querySelector('img');
+        img.src = renderItem.image;
+        img.alt = renderItem.code;
+        img.classList.remove('hidden');
+    }
+
 }
 
-let itemSet = masterItemSet;
-
-itemsToDisplay = [];
-    // generates 3 random imgs to display, stores and removes from item set
-for(let i = 0; i < 3; i++) {
-    let renderItem = itemSet.getRandomItem();
-    itemsToDisplay.push(renderItem);
-    tally(displayedItems, renderItem.code);
-    itemSet.removeByCode(renderItem.code);
-
-        // displaying image and removing hidden class
-    let img = imgButtons[i].querySelector('img');
-    img.src = renderItem.image;
-    img.alt = renderItem.code;
-    img.classList.remove('hidden');
-}
 
 choiceContainer.addEventListener('click', (event) => {
     event.preventDefault();
