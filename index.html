@@ -17,36 +17,18 @@
     </header>
 
     <main>
-        <h1>Select An Item</h1>
+        <h1>Select Your Preference</h1>
+        
         <section id="product-selection">
-            <h2 id="product-name"></h2>
-            <div id="product-container" class="img-buttons">
-                <label class="item correct">
-                    <input type="radio" name="item" value="">
-                    <img src="">
-                </label>
-                <label class="item wrong">
-                    <input type="radio" name="item" value="">
-                    <img src="">
-                </label>
-                <label class="item wrong">
-                    <input type="radio" name="item" value="">
-                    <img src="">
-                </label>
+            <div id="item-choice-container" class="reveal">
+                <button name="item" class="item"><img class="hidden" class="item-img" src=""></button>
+                <button name="item" class="item"><img class="hidden" class="item-img" src=""></button>
+                <button name="item" class="item"><img class="hidden" class="item-img" src=""></button>
             </div>
            
-            <p id="next-container">
-                    <button id="next-button">NEXT</button>
-            </p>
-        </section>
-    
-        <section id="results-section" class="hidden">
-            <h2>Results</h2>
-            <chart>
-                <span name="item"></span> was clicked <span id="view-count"></span> times.<br>
-                That is 
-            </p>                
-            <ul id="choices-list"></ul>
+            <div class="hidden" id="results-container">
+                    <button id="results-button">VIEW RESULTS</button>
+            </div>
         </section>
     </main>
     <footer>

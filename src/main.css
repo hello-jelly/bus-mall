@@ -60,25 +60,22 @@ h2 {
     margin-top: 20px;
 }
 
-#product-container {
+#item-choice-container {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
 }
 
-input[type=radio] {
-    display: none;
-}
-
 .item {
-    width: 300px);
-    height: 310px;
+    width: 300px;
+    height: 300px;
     position: relative;
     border: 5px solid #ddd;
+    padding: 0;
     transition: width 200ms ease-in-out;
 }
 
-#product-container.reveal .item::before {
+#item-choice-container.reveal .item::before {
     position: absolute;
     top: 2px;
     right: 2px;
@@ -94,26 +91,26 @@ input[type=radio] {
     border-radius: 100%;
 }
 
-#product-container:not(.reveal) .item:hover {
+#item-choice-container:not(.reveal) .item:hover {
     border: 5px solid red;
     cursor: pointer;
 }
 
-#product-container.reveal .item.choice {
+#item-choice-container.reveal .item.choice {
     border: 5px solid red;
 }
 
 .item img {
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
+    height: 290px;
+    width: 290px;
+    object-fit: contain;
 }
 
-#next-button {
+#results-button {
     font-size: 1.5rem;
     font-family: '', sans-serif;
     padding: 10px;
-    width: 150px;
+    width: 220px;
     background-color: red;
     color: white;
     border: transparent;
@@ -121,7 +118,7 @@ input[type=radio] {
     margin-top: 20px;
 }
 
-.next-button:hover {
+.results-button:hover {
     cursor: pointer;
     transition: color 100ms ease-in;
     border: 2px solid white;
