@@ -12,7 +12,7 @@ const resultsButton = document.getElementById('results-button');
 
 let masterItemSet = new ItemSet(items);
 const displayedItems = {};
-// let selectedItems = {};
+let selectedItems = {};
 let itemsToDisplay;
 
 let turns = 0;
@@ -52,15 +52,18 @@ function renderItems() {
     let itemSet = masterItemSet;
 
     itemsToDisplay = [];
-        // generates 3 random imgs to display, stores and removes from item set
+
+    // generates 3 random imgs to display, stores and removes from item set
     for(let i = 0; i < 3; i++) {
         let renderItem = itemSet.getRandomItem();
         itemsToDisplay.push(renderItem);
         tally(displayedItems, renderItem.code);
         itemSet.removeByCode(renderItem.code);
 
-            // displaying image and removing hidden class
-        let img = imgButtons[i].querySelector('img');
+        // displaying image and removing hidden class
+        let button = imgButtons[i];
+        button.value = renderItem.code;
+        let img = button.querySelector('img');
         img.src = renderItem.image;
         img.alt = renderItem.code;
         img.classList.remove('hidden');
@@ -73,12 +76,9 @@ for(let button of imgButtons) {
     button.addEventListener('click', (event) => {
         event.preventDefault();
         turns++;
+        tally(selectedItems, button.value);
         renderItems();
     });
 }
 
 renderItems();
-
-// for(let i = 0; i < 3; i++) {
-//     tally(selectedItems, selectedItems.code);
-// }
