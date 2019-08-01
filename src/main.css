@@ -103,7 +103,7 @@ h2 {
 .item img {
     height: 290px;
     width: 290px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 #results-button {

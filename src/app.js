@@ -13,7 +13,7 @@ const items = store.getItems();
 const masterItemSet = new ItemSet(items);
 const selectedItems = [];
 const displayedItems = [];
-let itemsToDisplay = [];
+let itemsToDisplay;
 let userItem;
 let turns = 0;
 
@@ -21,14 +21,15 @@ function renderItems() {
     let itemSet = masterItemSet;
     if(userItem && masterItemSet.list.length > 3) {
         itemSet = new ItemSet(masterItemSet.list);
-        itemSet.removeById(userItem.id);
+        itemSet.removeByCode(userItem.code);
     }
 
+    itemsToDisplay = [];
     // generates 3 random imgs to display, stores and removes from item set
     for(let i = 0; i < 3; i++) {
         let renderItem = itemSet.getRandomItem();
         itemsToDisplay.push(renderItem);
-        itemSet.removeById(renderItem.id);
+        itemSet.removeByCode(renderItem.code);
         let img = imgButtons[i].querySelector('img');
         img.src = renderItem.image;
         img.classList.remove('hidden');

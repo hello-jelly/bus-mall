@@ -12,14 +12,13 @@ class ItemSet {
         return item;
     }
     
-    removeById(itemId) {
+    removeByCode(itemCode) {
         const list = this.list;
         for(let i = 0; i < list.length; i++) {
             const item = list[i];
-            if(item.id === itemId); {
+            if(item.code === itemCode) {
                 list.splice(i, 1);
             }
-            return;
         }
     }
 }

@@ -13,7 +13,7 @@ const banana = {
 const bathroom = {
     code: 'bathroom',
     name: 'Bathroom',
-    image: 'assets/bathroom,jpg',
+    image: 'assets/bathroom.jpg',
 };
 
 const boots = {
@@ -85,7 +85,7 @@ const shark = {
 const sweep = {
     code: 'sweep',
     name: 'Sweep',
-    image: 'assets/sweep.jpg',
+    image: 'assets/sweep.png',
 };
 
 const tauntaun = {
@@ -103,7 +103,7 @@ const unicorn = {
 const usb = {
     code: 'usb',
     name: 'Usb',
-    image: 'assets/usb.jpg',
+    image: 'assets/usb.gif',
 };
 
 const waterCan = {
