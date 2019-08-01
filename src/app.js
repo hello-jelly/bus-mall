@@ -31,9 +31,8 @@ function renderItems() {
         imgButtons.disable;
         choiceContainer.classList.add('hidden');
         resultsButton.classList.remove('hidden');
-        console.log('turns is 5');
         resultsButton.addEventListener('click', (event) => { 
-            // reveal chart??
+            resultsContainer.classList.remove('hidden');
         })
     } else {
         if(masterItemSet.list.length < 3) {

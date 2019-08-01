@@ -18,10 +18,6 @@ body {
     height: 30px;
 }
 
-.hidden {
-    display: none;
-}
-
 header {
     display: flex;
     float: left;
@@ -127,4 +123,8 @@ h2 {
 footer {
     background-color:black;
     height:20px;
+}
+
+.hidden {
+    visibility: hidden;
 }
