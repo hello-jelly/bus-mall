@@ -12,10 +12,18 @@ const resultsButton = document.getElementById('results-button');
 const items = store.getItems();
 const masterItemSet = new ItemSet(items);
 const selectedItems = [];
-const displayedItems = [];
+const displayedItems = {};
 let itemsToDisplay;
 let userItem;
 let turns = 0;
+
+function tally(items, code) {
+    if(items[code]) {
+        items[code] += 1;
+    } else {
+        items[code] = 1;
+    }
+}
 
 function renderItems() {
     let itemSet = masterItemSet;
@@ -29,10 +37,15 @@ function renderItems() {
     for(let i = 0; i < 3; i++) {
         let renderItem = itemSet.getRandomItem();
         itemsToDisplay.push(renderItem);
+        tally(displayedItems, renderItem.code);
         itemSet.removeByCode(renderItem.code);
+
+        // displaying image and removing hidden class
         let img = imgButtons[i].querySelector('img');
         img.src = renderItem.image;
         img.classList.remove('hidden');
+
+
     }
 }
 renderItems();
