@@ -10,11 +10,11 @@ const resultsContainer = document.getElementById('results-container');
 const resultsButton = document.getElementById('results-button');
 
 const items = store.getItems();
-const masterItemSet = new ItemSet(items);
+let masterItemSet = new ItemSet(items);
 const selectedItems = [];
 const displayedItems = {};
 let itemsToDisplay;
-let userItem;
+
 let turns = 0;
 
 function tally(items, code) {
@@ -26,11 +26,24 @@ function tally(items, code) {
 }
 
 function renderItems() {
+    // Check for turn count here before continuing
+    if(turns > 5) {
+        imgButtons.disable;
+        choiceContainer.classList.add('hidden');
+        resultsButton.classList.remove('hidden');
+        console.log('turns is 5');
+        resultsButton.addEventListener('click', (event) => { 
+            // reveal chart??
+        })
+    } else {
+        if(masterItemSet.list.length < 3) {
+            masterItemSet = new ItemSet(items);
+            for(let i = 0; i < itemsToDisplay.length; i++) {
+                masterItemSet.removeByCode(itemsToDisplay[i].code);
+            }
+        }}
+
     let itemSet = masterItemSet;
-    if(userItem && masterItemSet.list.length > 3) {
-        itemSet = new ItemSet(masterItemSet.list);
-        itemSet.removeByCode(userItem.code);
-    }
 
     itemsToDisplay = [];
     // generates 3 random imgs to display, stores and removes from item set
@@ -43,15 +56,16 @@ function renderItems() {
         // displaying image and removing hidden class
         let img = imgButtons[i].querySelector('img');
         img.src = renderItem.image;
+        img.alt = renderItem.code;
         img.classList.remove('hidden');
-
-
     }
 }
+
+choiceContainer.addEventListener('click', (event) => {
+    event.preventDefault();
+    turns++;
+    renderItems();
+    console.log(turns);
+});
+
 renderItems();
-
-
-// for(let i = 0; i < radioInputs.length; i++) {
-//     const radioInput = radioInputs[i];
-//     radioInput.addEventListener('input', );
-// }
