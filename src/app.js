@@ -68,12 +68,14 @@ function renderItems() {
 
 }
 
-
-choiceContainer.addEventListener('click', (event) => {
-    event.preventDefault();
-    turns++;
-    renderItems();
-});
+// adding event listener to each button instead of container
+for(let button of imgButtons) {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        turns++;
+        renderItems();
+    });
+}
 
 renderItems();
 
