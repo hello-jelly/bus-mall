@@ -35,6 +35,7 @@ function renderItems() {
         resultsButton.classList.remove('hidden');
         
         resultsButton.addEventListener('click', (event) => { 
+            event.preventDefault();
             resultsContainer.classList.remove('hidden');
             resultsButton.Button.classList.add('hidden');
             return;
