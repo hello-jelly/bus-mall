@@ -1,18 +1,16 @@
 import store from './data/store.js';
 import ItemSet from './item-set.js';
-import renderList from './render-list.js';
+import { renderListTotals, renderListSelections, renderChart } from './render-list.js';
 
 const items = store.getItems();
 const imgButtons = document.querySelectorAll('button[name=item]');
 const header = document.getElementById('header');
 const productSelection = document.getElementById('product-selection');
-const choiceContainer = document.getElementById('item-choice-container');
 const resultsContainer = document.getElementById('results-container');
 const resultsButton = document.getElementById('results-button');
 const choiceList = document.getElementById('choice-list');
 const displayedList = document.getElementById('viewed-list');
-
-// const ctx = document.getElementById('chart').getContext('2d');
+const chart = document.getElementById('chart');
 
 let masterItemSet = new ItemSet(items);
 const displayedItems = {};
@@ -32,7 +30,7 @@ function tally(items, code) {
 function renderItems() {
     // Checks for turn count, if 25 then disables and hides img buttons and reveals the results button
     // when reveal button clicked it hides self and reveals chart
-    if(turns > 5) {
+    if(turns > 2) {
         imgButtons.disable;
         productSelection.classList.add('hidden');
         header.classList.add('hidden');
@@ -80,8 +78,11 @@ for(let button of imgButtons) {
 resultsButton.addEventListener('click', (event) => { 
     event.preventDefault();
     resultsButton.classList.add('hidden');
-    renderList(selectedItems, choiceList);
-    renderList(displayedItems, displayedList);
+    chart.classList.remove('hidden');
+
+    renderChart(chart, selectedItems, displayedItems);
+    renderListSelections(selectedItems, displayedItems, choiceList);
+    renderListTotals(displayedItems, displayedList);
     resultsContainer.classList.remove('hidden');
     return;
 });
