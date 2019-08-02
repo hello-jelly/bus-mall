@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/src/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Cabin|Hind+|Rubik&display=swap" rel="stylesheet">
+    <link rel=“stylesheet” href=“/src/chart.css”>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin|Hind+|Rubik&display=swap">
     <title>BusMall</title>
 </head>
 <body>
@@ -25,10 +26,30 @@
                 <button name="item" class="item" value=""><img class="hidden" class="item-img" src=""></button>
                 <button name="item" class="item" value=""><img class="hidden" class="item-img" src=""></button>
             </div>
-            <button class="hidden" id="results-button">VIEW RESULTS</button>           
+        </section>
+        
+        <button class="hidden" id="results-button">VIEW RESULTS</button>           
+
+        <section>
             <div class="hidden" id="results-container">
+                <h1>Thank You For Your Participation</h1>
+                
+                <h2>Your Preferred Products</h2>
+                <p>
+                    <ul id="choice-list"></ul>
+                </p>
+    
+                <h2>Your Viewed Products</h2>
+                <p>
+                    <ul id="viewed-list"></ul>
+                </p>
+    
+                <p>
+                    <a href="./">New Session</a>
+                </p>
             </div>
         </section>
+
     </main>
     <footer>
     </footer>

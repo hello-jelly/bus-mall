@@ -24,7 +24,7 @@ header {
     background-color: #4c4c4c;
     width: 100vw;
     height: 180px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 #logo {
@@ -42,18 +42,13 @@ main {
     background-position: center 30px;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 700px;
+    height: 800px;
 }
 
 h1 {
     font-family: 'Hind Siliguri', sans-serif;
     color: white;
     text-shadow: 3px 3px 5px black;
-}
-
-h2 {
-    color: black;
-    margin-top: 20px;
 }
 
 #item-choice-container {
@@ -111,7 +106,7 @@ h2 {
     color: white;
     border: transparent;
     font-weight: bolder;
-    margin-top: 20px;
+    margin-top: 80px;
 }
 
 .results-button:hover {
@@ -126,5 +121,5 @@ footer {
 }
 
 .hidden {
-    visibility: hidden;
+    display: none;
 }
