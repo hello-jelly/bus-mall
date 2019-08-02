@@ -7,24 +7,24 @@ html {
 }
 
 body {
-    padding: 0;
-    margin: 0;
     font-family: 'Cabin', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 #nav {
     background-color: black;
-    width: 100vw;
     height: 30px;
+    width: 100vw;
 }
 
 header {
+    background-color: #4c4c4c;
     display: flex;
     float: left;
-    background-color: #4c4c4c;
-    width: 100vw;
     height: 180px;
     margin-bottom: 50px;
+    width: 100vw;
 }
 
 #logo {
@@ -33,53 +33,53 @@ header {
 }
 
 main {
-    margin: 0;
-    height: 1000px;
-    padding: 50px;
-    background: white;
-    text-align: center;
     background-image: url(../assets/bus-img-2.jpg);
     background-position: center 30px;
     background-repeat: no-repeat;
     background-size: cover;
+    background: white;
+    height: 1000px;
     height: 800px;
+    margin: 0;
+    padding: 50px;
+    text-align: center;
 }
 
 #header {
-    font-family: 'Hind Siliguri', sans-serif;
     color: white;
+    font-family: 'Hind Siliguri', sans-serif;
     text-shadow: 3px 3px 5px black;
 }
 
 #item-choice-container {
-    width: 100%;
     display: flex;
     justify-content: space-evenly;
+    width: 100%;
 }
 
 .item {
-    width: 300px;
-    height: 300px;
-    position: relative;
     border: 5px solid #ddd;
+    height: 300px;
     padding: 0;
+    position: relative;
     transition: width 200ms ease-in-out;
+    width: 300px;
 }
 
 #item-choice-container.reveal .item::before {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    background: white;
+    border-radius: 100%;
+    display: flex;
     font-size: 2em;
     font-weight: bolder;
     height: 25px;
-    width: 25px;
-    background: white;
+    justify-content: center;
     padding: 3px;
-    border-radius: 100%;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 25px;
 }
 
 #item-choice-container:not(.reveal) .item:hover {
@@ -93,51 +93,51 @@ main {
 
 .item img {
     height: 290px;
-    width: 290px;
     object-fit: cover;
+    width: 290px;
 }
 
 #chart {
-    width: 800px;
-    height: 500px;
     background-color: rgba(255, 255, 255, .75);
+    height: 500px;
     padding: 2rem;
+    width: 800px;
 }
 
 #results-button {
-    font-size: 1.5rem;
+    background-color: red;
+    border: transparent;
+    color: white;
     font-family: '', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
     padding: 10px;
     width: 220px;
-    background-color: red;
-    color: white;
-    border: transparent;
-    font-weight: bolder;
 }
 
 .results-button:hover {
+    border: 2px solid white;
     cursor: pointer;
     transition: color 100ms ease-in;
-    border: 2px solid white;
 }
 
 #results-container {
-    width: 35%;
     margin-left: 30%;
+    width: 35%;
 }
 
 #thanks {
-    margin-top: 70px;
-    font-family: 'Hind Siliguri', sans-serif;
     color: red;
+    font-family: 'Hind Siliguri', sans-serif;
+    margin-top: 70px;
 }
 
 h2 {
     font-size: 1.25rem;
 }
 ul {
-    list-style-type: none;
     line-height: 1.5rem;
+    list-style-type: none;
     text-align: left;
 }
 
