@@ -30,7 +30,7 @@ function tally(items, code) {
 function renderItems() {
     // Checks for turn count, if 25 then disables and hides img buttons and reveals the results button
     // when reveal button clicked it hides self and reveals chart
-    if(turns > 2) {
+    if(turns > 24) {
         imgButtons.disable;
         productSelection.classList.add('hidden');
         header.classList.add('hidden');
