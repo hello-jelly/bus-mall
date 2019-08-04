@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: whitesmoke;
+}
+
+body {
+    font-family: 'Cabin', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#nav {
+    background-color: black;
+    height: 30px;
+    width: 100vw;
+}
+
+header {
+    background-color: #4c4c4c;
+    display: flex;
+    float: left;
+    height: 180px;
+    margin-bottom: 50px;
+    width: 100vw;
+}
+
+#logo {
+    height: 100px;
+    margin-top: 20px;
+}
+
+main {
+    background-image: url(../assets/bus-img-2.jpg);
+    background-position: center 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: white;
+    height: 1000px;
+    height: 800px;
+    margin: 0;
+    padding: 50px;
+    text-align: center;
+}
+
+#header {
+    color: white;
+    font-family: 'Hind Siliguri', sans-serif;
+    text-shadow: 3px 3px 5px black;
+}
+
+#item-choice-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.item {
+    border: 5px solid #ddd;
+    height: 300px;
+    padding: 0;
+    position: relative;
+    transition: width 200ms ease-in-out;
+    width: 300px;
+}
+
+#item-choice-container.reveal .item::before {
+    align-items: center;
+    background: white;
+    border-radius: 100%;
+    display: flex;
+    font-size: 2em;
+    font-weight: bolder;
+    height: 25px;
+    justify-content: center;
+    padding: 3px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 25px;
+}
+
+#item-choice-container:not(.reveal) .item:hover {
+    border: 5px solid red;
+    cursor: pointer;
+}
+
+#item-choice-container.reveal .item.choice {
+    border: 5px solid red;
+}
+
+.item img {
+    height: 290px;
+    object-fit: cover;
+    width: 290px;
+}
+
+#chart {
+    background-color: rgba(255, 255, 255, .75);
+    height: 500px;
+    padding: 2rem;
+    width: 800px;
+}
+
+#results-button {
+    background-color: red;
+    border: transparent;
+    color: white;
+    font-family: '', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding: 10px;
+    width: 220px;
+}
+
+.results-button:hover {
+    border: 2px solid white;
+    cursor: pointer;
+    transition: color 100ms ease-in;
+}
+
+#results-container {
+    margin-left: 30%;
+    width: 35%;
+}
+
+#thanks {
+    color: red;
+    font-family: 'Hind Siliguri', sans-serif;
+    margin-top: 70px;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+ul {
+    line-height: 1.5rem;
+    list-style-type: none;
+    text-align: left;
+}
+
+li {
+    margin-left: 100px;
+}
+
+.new-session {
+    margin-bottom: 60px;
+}
+
+.hidden {
+    display: none;
+}
